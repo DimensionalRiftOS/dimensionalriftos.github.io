@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimensional Rift OS - Distro for I2P</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Assets/logo.png" type="image/png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="Assets/logo.png" alt="Dimensional Rift Logo">
+                <span>Dimensional Rift</span>
+            </div>
+            <button class="menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Homepage</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#download" class="nav-link">Download</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#docs" class="nav-link">Docs</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1 class="hero-title">Dimensional Rift OS</h1>
+            <p class="hero-subtitle">Linux Distro for I2P</p>
+            <p class="hero-description">
+                Dimensional Rift is a Debian (stable)-based Linux distribution designed for secure access to the I2P network and providing strong protection against cyber attacks.
+                It can run in live mode or be installed via Calamares.
+            </p>
+            <div class="hero-buttons">
+                <button class="download-btn" onclick="scrollToSection('download')">Download Now</button>
+                <button class="gallery-btn" onclick="scrollToSection('gallery')">View Gallery</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Dimensional Rift</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                       Dimensional Rift is a Debian-based GNU/Linux distribution focused on privacy and security. The system is built entirely around I2P (Invisible Internet Project), a peer-to-peer (P2P) anonymous communication network. I2P uses a technique called garlic routing, a form of multi-layer encryption that makes traffic analysis more difficult while also providing protection against attacks.Dimensional Rift comes with a hardened Firefox variant specifically configured for I2P. This browser can only access the I2P network, with clearnet connections deliberately blocked. When clearnet access is required, a separate Firefox browser included in the system can be used instead.
+                    </p>
+                    <p>
+                        In addition, Dimensional Rift includes multi-layered hardening settings to defend against cyberattacks. The system also enhances privacy by automatically removing certain usage traces upon shutdown.
+                    </p>
+                    <div class="features">
+                        <div class="feature">
+                            <h3>I2P</h3>
+                            <p>Preinstalled and configured I2P Router.Easy to use with GUI</p>
+                        </div>
+                        <div class="feature">
+                            <h3>Hardened</h3>
+                            <p>Hardened Kernel and System Settings</p>
+                        </div>
+                        <div class="feature">
+                            <h3>Browser</h3>
+                            <p>Preconfigured Firefox variant for I2P</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Screenshots</h2>
+            <p class="gallery-description">The system's desktop appearance and I2P usage</p>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openModal('Assets/1.png', 'Desktop Environment')">
+                    <img src="Assets/1.png" alt="Desktop Environment">
+                    <div class="gallery-overlay">
+                        <span>Desktop Environment</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('Assets/2.png', 'I2P Router Console')">
+                    <img src="Assets/2.png" alt="I2P Router Console">
+                    <div class="gallery-overlay">
+                        <span>I2P Router Console</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('Assets/3.png', 'System Installer')">
+                    <img src="Assets/3.png" alt="System Installer">
+                    <div class="gallery-overlay">
+                        <span>System Installer</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('Assets/4.png', 'GNOME')">
+                    <img src="Assets/4.png" alt="GNOME">
+                    <div class="gallery-overlay">
+                        <span>GNOME</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('Assets/5.png', 'Apps')">
+                    <img src="Assets/5.png" alt="Apps">
+                    <div class="gallery-overlay">
+                        <span>Apps</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal('Assets/6.png', 'Tools')">
+                    <img src="Assets/6.png" alt="Tools">
+                    <div class="gallery-overlay">
+                        <span>Tools</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Docs Section -->
+    <section id="docs" class="docs">
+        <div class="container">
+            <h2>Documentation</h2>
+            <div class="docs-content">
+                <div class="doc-item">
+                    <div class="doc-header" onclick="toggleDoc('faq')">
+                        <h3>FAQ</h3>
+                        <span class="doc-toggle">+</span>
+                    </div>
+                    <div class="doc-content" id="faq">
+                        <p><strong>Q: What makes Dimensional Rift different from regular Debian?</strong></p>
+                        <p>A: I2P comes pre-installed and configured with an easy-to-use GUI. It allows you to easily configure I2P ports. It comes with a special Firefox variant for I2P that cannot access clearnet, only .i2p sites. The browser and system are resistant to attacks.</p>
+                        
+                        <p><strong>Q: I'm new to Linux, is Dimensional Rift suitable for me?</strong></p>
+                        <p>A: If you're interested in the I2P network, yes. Installation and usage are extremely easy.</p>
+                        
+                        <p><strong>Q: Is Dimensional Rift open source?</strong></p>
+                        <p>A: Completely open source. You can access it from GitHub.</p>
+                        
+                        <p><strong>Q: What is I2P? How is it different from Tor?</strong></p>
+                        <p>A: I2P (Invisible Internet Project) is a network that provides anonymous communication over the internet. Unlike Tor, it's designed for internal network traffic. I2P allows users to create their own anonymous services ("eepsites") and communicate securely within the network.</p>
+                        
+                        <p><strong>Q: Garlic Routing vs Onion Routing</strong></p>
+                        <p>A: I2P uses garlic routing instead of Tor's "onion routing". Garlic routing encrypts multiple messages within a single packet, making traffic analysis and tracking even more difficult, enhancing privacy. While Tor encrypts each message with separate layers, I2P bundles packets together ("garlic cloves"), reducing traceability.</p>
+                        
+                        <p><strong>Q: Can I access the regular internet with I2P? Are there exit nodes?</strong></p>
+                        <p>A: I2P is primarily designed for services within its own network - eepsites and I2P messaging. Regular internet (clearnet) access is limited. Yes, theoretically "I2P exit nodes" allow internet access, but this isn't as widespread or secure as Tor's method. Exit nodes are generally limited, and it's always safer to stay within I2P for security/anonymity.</p>
+                        
+                        <p><strong>Q: Can my ISP see that I'm using I2P?</strong></p>
+                        <p>A: Yes, they can see you're connected but not what you're doing. Your ISP can detect that you're connected to the I2P network and identify that packets belong to I2P, but they cannot see the content, which sites you visit, or your messages due to I2P's end-to-end encryption and garlic routing.</p>
+                        
+                        <p><strong>Q: I'm using Dimensional Rift in a restrictive country, what should I do?</strong></p>
+                        <p>A: Enable Hidden Mode in the I2P Router.</p>
+                        
+                        <p><strong>Q: Can I use it together with Tor?</strong></p>
+                        <p>A: Theoretically possible but not recommended. Tor + I2P combination requires complex configuration, can reduce performance, and may complicate I2P's own security philosophy. Using I2P within its own network in Rift is the safest method.</p>
+                        
+                        <p><strong>Q: What is Firefox I2P Edition?</strong></p>
+                        <p>A: A Firefox variant customized for the I2P network. It blocks ads and scripts and includes many hardening settings. Clearnet access is completely disabled - the entire browser is forced to use the I2P network. Only Firefox and addon updates can use clearnet.</p>
+                        
+                        <p><strong>Q: How do I access the regular internet?</strong></p>
+                        <p>A: Use the Firefox Clearnet browser. This is a separate browser for accessing clearnet.</p>
+                        
+                        <p><strong>Q: How do updates work?</strong></p>
+                        <p>A: Updates are regularly obtained from Debian repositories. You'll receive security and package updates seamlessly from Debian and I2P repositories. There are no third-party repos.</p>
+                        
+                        <p><strong>Q: Who develops this distribution?</strong></p>
+                        <p>A: Dimensional Rift is a side project of the Cyrethium (formerly Securonis) operating system. The distribution is developed by Cyrethium's developer. More info: https://cyrethium.org</p>
+                        
+                        <p><strong>Q: Can I use Live USB?</strong></p>
+                        <p>A: You can, but when you install the system, additional hardening settings and AppArmor become active. Therefore, installing is better. Still, the choice is yours - you can carry it as a live USB.</p>
+                        
+                        <p><strong>Q: I have an NVIDIA GPU, can I use it?</strong></p>
+                        <p>A: You can use any NVIDIA card supported by the open source nouveau driver. Generally, it will boot without issues, but if your GPU is very old or very new, there might be problems.</p>
+                        
+                        <p><strong>Q: Can I use Dimensional Rift as an I2P server?</strong></p>
+                        <p>A: Yes, use I2P Port Manager to configure your port settings. Then you can host your service.</p>
+                    </div>
+                </div>
+                
+                <div class="doc-item">
+                    <div class="doc-header" onclick="toggleDoc('installation')">
+                        <h3>Installation</h3>
+                        <span class="doc-toggle">+</span>
+                    </div>
+                    <div class="doc-content" id="installation">
+                        <p><strong>USB Preparation:</strong></p>
+                        <ul>
+                            <li>Prepare a USB drive that you don't use and contains no important data</li>
+                            <li>Download Ventoy from its official website, then install Ventoy by selecting your USB drive</li>
+                            <li>Copy the ISO file to the location formatted with Ventoy</li>
+                        </ul>
+                        
+                        <p><strong>Booting:</strong></p>
+                        <ol>
+                            <li>Insert your USB drive into your device</li>
+                            <li>Restart the device and enter the BIOS menu</li>
+                            <li>Move the USB drive to first priority and save</li>
+                            <li>When booting from USB, select the Dimensional Rift ISO from the Ventoy menu</li>
+                            <li>Start your system</li>
+                        </ol>
+                        
+                        <p><strong>Installing to Disk:</strong></p>
+                        <ol>
+                            <li>Once the desktop environment loads, you're ready - that's all there is to it</li>
+                            <li>If you want, you can install the system to disk using "Install Dimensional Rift" option</li>
+                            <li>The system will be installed with Calamares - just follow the instructions and make the necessary settings</li>
+                            <li>When Calamares reaches the disk installation screen, you can encrypt your disk if you want</li>
+                        </ol>
+                        
+                        <p><strong>Troubleshooting Boot Issues:</strong></p>
+                        <ul>
+                            <li>Don't be hasty - wait a bit</li>
+                            <li>Try adding "nomodeset" to boot parameters</li>
+                            <li>Some hardware may not have Linux compatibility - unfortunately there's nothing the developer or distribution can do about this</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="doc-item">
+                    <div class="doc-header" onclick="toggleDoc('usage')">
+                        <h3>Usage</h3>
+                        <span class="doc-toggle">+</span>
+                    </div>
+                    <div class="doc-content" id="usage">
+                        <p><strong>I2P Router Menu:</strong></p>
+                        <p>Use the I2P Router menu located in the dock to start I2P. The "Start I2P Router" option will start I2P and open Firefox I2P Edition - please wait a moment. To see what the options in the I2P Router Menu do, click the about button.</p>
+                        
+                        <p><strong>I2P Port Manager:</strong></p>
+                        <p>If you want I2P to work more efficiently, use the I2P Port Manager tool. Please start I2P first so that I2P Port Manager can automatically detect used ports. Use option 8 to check necessary settings. Use option 3 to auto-configure. You can make manual settings, but be careful - if you don't have technical knowledge, you might create security vulnerabilities.</p>
+                        
+                        <p><strong>System Update:</strong></p>
+                        <p>To update the system, use the System Update tool - you don't need to do anything else.</p>
+                        
+                        <p><strong>Anti-Forensic Settings:</strong></p>
+                        <p>This tool enhances your privacy by deleting logs, RAM, swap, and some other temporary files on shutdown in an installed system. RAM and swap deletion provides protection against cold boot attacks.</p>
+                        
+                        <p><strong>Common Issues:</strong></p>
+                        <ul>
+                            <li><strong>Firefox Clearnet shows I2P Edition icon:</strong> This is normal. Firefox customizations are done through profiles, so the I2P Edition icon appears each time. But you're using Firefox Clearnet. It's easy to distinguish - if you can't access clearnet, it's I2P Edition.</li>
+                            <li><strong>Getting kernel panic:</strong> Nothing to worry about - it may be due to hardening settings, just restart.</li>
+                            <li><strong>I2P ports opened but still shows "Firewalled":</strong> Don't worry if I2P shows "firewalled" - this is mostly normal and I2P still works!</li>
+                            <li><strong>Want to use GNOME with Wayland:</strong> Tools may have issues since Wayland is incompatible with PyQt5. If you still want to enable it, add # before WaylandEnable=false in /etc/gdm3/daemon.conf</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="doc-item">
+                    <div class="doc-header" onclick="toggleDoc('disclaimers')">
+                        <h3>Important Disclaimers & Warnings</h3>
+                        <span class="doc-toggle">+</span>
+                    </div>
+                    <div class="doc-content" id="disclaimers">
+                        <p><strong>Official Source Usage:</strong></p>
+                        <p>Dimensional Rift should only be downloaded from official sources. Do not download from sites other than SourceForge. Fake or modified versions are not secure and the responsibility is yours.</p>
+                        
+                        <p><strong>Developer Communication:</strong></p>
+                        <p>The Dimensional Rift developer never privately messages users, sends emails, or makes private contact through social media. If you receive such a message, consider it fraud or identity theft.</p>
+                        
+                        <p><strong>Disclaimer:</strong></p>
+                        <p>Data loss, system errors, or security breaches that may occur during the use of this distribution are entirely the user's responsibility. The developer cannot be held responsible for any damage or loss resulting from the use of Dimensional Rift.</p>
+                        
+                        <p><strong>Security Warning:</strong></p>
+                        <ul>
+                            <li>Use the software only on recognized and secure networks</li>
+                            <li>Do not randomly change root privileges or critical system files</li>
+                            <li>Be careful against fake or counterfeit software</li>
+                        </ul>
+                        
+                        <p><strong>Legal Warning:</strong></p>
+                        <p>Dimensional Rift should not be used for illegal activities or unauthorized access to third-party systems. All legal responsibility belongs to the user.</p>
+                        
+                        <p><strong>Contact & Support:</strong></p>
+                        <p>If you found a bug or have suggestions, contact the developer. Email: root0emir@protonmail.com</p>
+                        
+                        <p><strong>How to Support:</strong></p>
+                        <p>The most important support you can provide is promoting this system. Tell your friends, open a topic in forums, or write a blog. The project is maintained by Cyrethium - if you want to donate, you can visit: <a href="https://cyrethium.org/donate" target="_blank">https://cyrethium.org/donate</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <h2>Download Dimensional Rift</h2>
+            <p class="download-description">Get the latest version of Dimensional Rift</p>
+            <div class="download-options">
+                <div class="download-card">
+                    <h3>Latest Release</h3>
+                    <p class="version">1.0</p>
+                    <p>Stable release with all features</p>
+                    <a href="https://sourceforge.net/projects/dimensional-rift/" target="_blank" class="btn btn-primary">Download ISO</a>
+                </div>
+            </div>
+            <div class="system-requirements">
+                <h3>System Requirements</h3>
+                <ul>
+                    <li>64-bit processor</li>
+                    <li>4 GB RAM minimum (8 GB recommended)</li>
+                    <li>20 GB disk space</li>
+                    <li>UEFI boot support</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Developer Section -->
+    <section id="developer" class="developer">
+        <div class="container">
+            <h2>Development & Community</h2>
+            <div class="dev-content">
+                <div class="dev-info">
+                    <h3>Community</h3>
+                    <p>
+                        Join community of users and developer. Get support, share ideas, 
+                        and contribute to the future of Dimensional Rift.
+                    </p>
+                    <div class="dev-links">
+                        <a href="https://github.com/DimensionalRiftOS" target="_blank" class="btn btn-secondary">GitHub</a>
+                        <a href="https://discord.gg/GtJ7EgKNEb" target="_blank" class="btn btn-secondary">Discord</a>
+                    </div>
+                </div>
+                <div class="dev-info">
+                    <h3>Developer</h3>
+                    <p>
+                        Connect with the main developer behind Dimensional Rift for questions, 
+                        suggestions, or collaboration opportunities.
+                    </p>
+                    <div class="dev-links">
+                        <a href="https://github.com/root0emir" target="_blank" class="btn btn-secondary">GitHub</a>
+                        <a href="https://www.linkedin.com/in/emir111111/" target="_blank" class="btn btn-secondary">LinkedIn</a>
+                        <a href="mailto:root0emir@protonmail.com" class="btn btn-secondary">Email</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="Assets/logo.png" alt="Dimensional Rift Logo">
+                    <span>Dimensional Rift</span>
+                </div>
+                <p>&copy; 2025 Dimensional Rift OS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Image Gallery -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-caption" id="modalCaption"></div>
+    </div>
+
+    <script>
+        // Scroll to section function
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                const navbar = document.querySelector('.navbar');
+                const navbarHeight = navbar ? navbar.offsetHeight : 80;
+                const targetPosition = section.offsetTop - navbarHeight - 10;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Modal functionality
+        function openModal(imageSrc, caption) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+            
+            modal.style.display = 'block';
+            modalImg.src = imageSrc;
+            modalCaption.textContent = caption;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside of image
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Documentation toggle functionality
+        function toggleDoc(docId) {
+            const content = document.getElementById(docId);
+            const toggle = content.previousElementSibling.querySelector('.doc-toggle');
+            
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                toggle.textContent = '+';
+            } else {
+                content.style.display = 'block';
+                toggle.textContent = '-';
+            }
+        }
+
+        // Navigation links smooth scrolling
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    scrollToSection(targetId);
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            const menuToggle = document.querySelector('.menu-toggle');
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
